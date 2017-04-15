@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <title>Code coverage report for node-npmtest-jade/jade/lib/parser.js</title>
     <meta charset="utf-8">
     <style>
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-jade/jade/lib/</a> &#187; parser.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-jade/jade/lib/</a> » parser.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -1928,18 +1926,18 @@ var extname = path.extname;
  * @api public
  */
 &nbsp;
-var Parser = exports = module.exports = <span class="fstat-no" title="function not covered" >function Parser(str, filename, options){</span>
+var Parser = exports = module.exports = <span class="fstat-no" title="function not covered">function Parser(str, filename, options){</span>
   //Strip any UTF-8 BOM off of the start of `str`, if it exists.
-<span class="cstat-no" title="statement not covered" >  this.input = str.replace(/^\uFEFF/, '');</span>
-<span class="cstat-no" title="statement not covered" >  this.lexer = new Lexer(this.input, filename);</span>
-<span class="cstat-no" title="statement not covered" >  this.filename = filename;</span>
-<span class="cstat-no" title="statement not covered" >  this.blocks = {};</span>
-<span class="cstat-no" title="statement not covered" >  this.mixins = {};</span>
-<span class="cstat-no" title="statement not covered" >  this.options = options;</span>
-<span class="cstat-no" title="statement not covered" >  this.contexts = [this];</span>
-<span class="cstat-no" title="statement not covered" >  this.inMixin = 0;</span>
-<span class="cstat-no" title="statement not covered" >  this.dependencies = [];</span>
-<span class="cstat-no" title="statement not covered" >  this.inBlock = 0;</span>
+<span class="cstat-no" title="statement not covered">  this.input = str.replace(/^\uFEFF/, '');</span>
+<span class="cstat-no" title="statement not covered">  this.lexer = new Lexer(this.input, filename);</span>
+<span class="cstat-no" title="statement not covered">  this.filename = filename;</span>
+<span class="cstat-no" title="statement not covered">  this.blocks = {};</span>
+<span class="cstat-no" title="statement not covered">  this.mixins = {};</span>
+<span class="cstat-no" title="statement not covered">  this.options = options;</span>
+<span class="cstat-no" title="statement not covered">  this.contexts = [this];</span>
+<span class="cstat-no" title="statement not covered">  this.inMixin = 0;</span>
+<span class="cstat-no" title="statement not covered">  this.dependencies = [];</span>
+<span class="cstat-no" title="statement not covered">  this.inBlock = 0;</span>
 };
 &nbsp;
 /**
@@ -1959,11 +1957,11 @@ Parser.prototype = {
    * or pop and return a `Parser`.
    */
 &nbsp;
-  context: <span class="fstat-no" title="function not covered" >function(parser){</span>
-<span class="cstat-no" title="statement not covered" >    if (parser) {</span>
-<span class="cstat-no" title="statement not covered" >      this.contexts.push(parser);</span>
+  context: <span class="fstat-no" title="function not covered">function(parser){</span>
+<span class="cstat-no" title="statement not covered">    if (parser) {</span>
+<span class="cstat-no" title="statement not covered">      this.contexts.push(parser);</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      return this.contexts.pop();</span>
+<span class="cstat-no" title="statement not covered">      return this.contexts.pop();</span>
     }
   },
 &nbsp;
@@ -1974,8 +1972,8 @@ Parser.prototype = {
    * @api private
    */
 &nbsp;
-  advance: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    return this.lexer.advance();</span>
+  advance: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    return this.lexer.advance();</span>
   },
 &nbsp;
   /**
@@ -1985,8 +1983,8 @@ Parser.prototype = {
    * @api private
    */
 &nbsp;
-  peek: <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >    return this.lookahead(1);</span>
+  peek: <span class="fstat-no" title="function not covered">function() {</span>
+<span class="cstat-no" title="statement not covered">    return this.lookahead(1);</span>
   },
 &nbsp;
   /**
@@ -1996,8 +1994,8 @@ Parser.prototype = {
    * @api private
    */
 &nbsp;
-  line: <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >    return this.lexer.lineno;</span>
+  line: <span class="fstat-no" title="function not covered">function() {</span>
+<span class="cstat-no" title="statement not covered">    return this.lexer.lineno;</span>
   },
 &nbsp;
   /**
@@ -2008,8 +2006,8 @@ Parser.prototype = {
    * @api private
    */
 &nbsp;
-  lookahead: <span class="fstat-no" title="function not covered" >function(n){</span>
-<span class="cstat-no" title="statement not covered" >    return this.lexer.lookahead(n);</span>
+  lookahead: <span class="fstat-no" title="function not covered">function(n){</span>
+<span class="cstat-no" title="statement not covered">    return this.lexer.lookahead(n);</span>
   },
 &nbsp;
   /**
@@ -2019,44 +2017,44 @@ Parser.prototype = {
    * @api public
    */
 &nbsp;
-  parse: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var block = new nodes.Block, parser;</span>
-<span class="cstat-no" title="statement not covered" >    block.line = 0;</span>
-<span class="cstat-no" title="statement not covered" >    block.filename = this.filename;</span>
+  parse: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var block = new nodes.Block, parser;</span>
+<span class="cstat-no" title="statement not covered">    block.line = 0;</span>
+<span class="cstat-no" title="statement not covered">    block.filename = this.filename;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    while ('eos' != this.peek().type) {</span>
-<span class="cstat-no" title="statement not covered" >      if ('newline' == this.peek().type) {</span>
-<span class="cstat-no" title="statement not covered" >        this.advance();</span>
+<span class="cstat-no" title="statement not covered">    while ('eos' != this.peek().type) {</span>
+<span class="cstat-no" title="statement not covered">      if ('newline' == this.peek().type) {</span>
+<span class="cstat-no" title="statement not covered">        this.advance();</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        var next = this.peek();</span>
-<span class="cstat-no" title="statement not covered" >        var expr = this.parseExpr();</span>
-<span class="cstat-no" title="statement not covered" >        expr.filename = expr.filename || this.filename;</span>
-<span class="cstat-no" title="statement not covered" >        expr.line = next.line;</span>
-<span class="cstat-no" title="statement not covered" >        block.push(expr);</span>
+<span class="cstat-no" title="statement not covered">        var next = this.peek();</span>
+<span class="cstat-no" title="statement not covered">        var expr = this.parseExpr();</span>
+<span class="cstat-no" title="statement not covered">        expr.filename = expr.filename || this.filename;</span>
+<span class="cstat-no" title="statement not covered">        expr.line = next.line;</span>
+<span class="cstat-no" title="statement not covered">        block.push(expr);</span>
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (parser = this.extending) {</span>
-<span class="cstat-no" title="statement not covered" >      this.context(parser);</span>
-<span class="cstat-no" title="statement not covered" >      var ast = parser.parse();</span>
-<span class="cstat-no" title="statement not covered" >      this.context();</span>
+<span class="cstat-no" title="statement not covered">    if (parser = this.extending) {</span>
+<span class="cstat-no" title="statement not covered">      this.context(parser);</span>
+<span class="cstat-no" title="statement not covered">      var ast = parser.parse();</span>
+<span class="cstat-no" title="statement not covered">      this.context();</span>
 &nbsp;
       // hoist mixins
-<span class="cstat-no" title="statement not covered" >      for (var name in this.mixins)</span>
-<span class="cstat-no" title="statement not covered" >        ast.unshift(this.mixins[name]);</span>
-<span class="cstat-no" title="statement not covered" >      return ast;</span>
+<span class="cstat-no" title="statement not covered">      for (var name in this.mixins)</span>
+<span class="cstat-no" title="statement not covered">        ast.unshift(this.mixins[name]);</span>
+<span class="cstat-no" title="statement not covered">      return ast;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!this.extending &amp;&amp; !this.included &amp;&amp; Object.keys(this.blocks).length){</span>
-<span class="cstat-no" title="statement not covered" >      var blocks = [];</span>
-<span class="cstat-no" title="statement not covered" >      utils.walkAST(block, <span class="fstat-no" title="function not covered" >function (node) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (node.type === 'Block' &amp;&amp; node.name) {</span>
-<span class="cstat-no" title="statement not covered" >          blocks.push(node.name);</span>
+<span class="cstat-no" title="statement not covered">    if (!this.extending &amp;&amp; !this.included &amp;&amp; Object.keys(this.blocks).length){</span>
+<span class="cstat-no" title="statement not covered">      var blocks = [];</span>
+<span class="cstat-no" title="statement not covered">      utils.walkAST(block, <span class="fstat-no" title="function not covered">function (node) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (node.type === 'Block' &amp;&amp; node.name) {</span>
+<span class="cstat-no" title="statement not covered">          blocks.push(node.name);</span>
         }
       });
-<span class="cstat-no" title="statement not covered" >      Object.keys(this.blocks).forEach(<span class="fstat-no" title="function not covered" >function (name) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (blocks.indexOf(name) === -1 &amp;&amp; !this.blocks[name].isSubBlock) {</span>
-<span class="cstat-no" title="statement not covered" >          console.warn('Warning: Unexpected block "'</span>
+<span class="cstat-no" title="statement not covered">      Object.keys(this.blocks).forEach(<span class="fstat-no" title="function not covered">function (name) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (blocks.indexOf(name) === -1 &amp;&amp; !this.blocks[name].isSubBlock) {</span>
+<span class="cstat-no" title="statement not covered">          console.warn('Warning: Unexpected block "'</span>
                        + name
                        + '" '
                        + ' on line '
@@ -2068,7 +2066,7 @@ Parser.prototype = {
       }.bind(this));
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return block;</span>
+<span class="cstat-no" title="statement not covered">    return block;</span>
   },
 &nbsp;
   /**
@@ -2078,11 +2076,11 @@ Parser.prototype = {
    * @api private
    */
 &nbsp;
-  expect: <span class="fstat-no" title="function not covered" >function(type){</span>
-<span class="cstat-no" title="statement not covered" >    if (this.peek().type === type) {</span>
-<span class="cstat-no" title="statement not covered" >      return this.advance();</span>
+  expect: <span class="fstat-no" title="function not covered">function(type){</span>
+<span class="cstat-no" title="statement not covered">    if (this.peek().type === type) {</span>
+<span class="cstat-no" title="statement not covered">      return this.advance();</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      throw new Error('expected "' + type + '", but got "' + this.peek().type + '"');</span>
+<span class="cstat-no" title="statement not covered">      throw new Error('expected "' + type + '", but got "' + this.peek().type + '"');</span>
     }
   },
 &nbsp;
@@ -2093,9 +2091,9 @@ Parser.prototype = {
    * @api private
    */
 &nbsp;
-  accept: <span class="fstat-no" title="function not covered" >function(type){</span>
-<span class="cstat-no" title="statement not covered" >    if (this.peek().type === type) {</span>
-<span class="cstat-no" title="statement not covered" >      return this.advance();</span>
+  accept: <span class="fstat-no" title="function not covered">function(type){</span>
+<span class="cstat-no" title="statement not covered">    if (this.peek().type === type) {</span>
+<span class="cstat-no" title="statement not covered">      return this.advance();</span>
     }
   },
 &nbsp;
@@ -2115,53 +2113,53 @@ Parser.prototype = {
    * | interpolation
    */
 &nbsp;
-  parseExpr: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    switch (this.peek().type) {</span>
+  parseExpr: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    switch (this.peek().type) {</span>
       case 'tag':
-<span class="cstat-no" title="statement not covered" >        return this.parseTag();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseTag();</span>
       case 'mixin':
-<span class="cstat-no" title="statement not covered" >        return this.parseMixin();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseMixin();</span>
       case 'block':
-<span class="cstat-no" title="statement not covered" >        return this.parseBlock();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseBlock();</span>
       case 'mixin-block':
-<span class="cstat-no" title="statement not covered" >        return this.parseMixinBlock();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseMixinBlock();</span>
       case 'case':
-<span class="cstat-no" title="statement not covered" >        return this.parseCase();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseCase();</span>
       case 'extends':
-<span class="cstat-no" title="statement not covered" >        return this.parseExtends();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseExtends();</span>
       case 'include':
-<span class="cstat-no" title="statement not covered" >        return this.parseInclude();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseInclude();</span>
       case 'doctype':
-<span class="cstat-no" title="statement not covered" >        return this.parseDoctype();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseDoctype();</span>
       case 'filter':
-<span class="cstat-no" title="statement not covered" >        return this.parseFilter();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseFilter();</span>
       case 'comment':
-<span class="cstat-no" title="statement not covered" >        return this.parseComment();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseComment();</span>
       case 'text':
-<span class="cstat-no" title="statement not covered" >        return this.parseText();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseText();</span>
       case 'each':
-<span class="cstat-no" title="statement not covered" >        return this.parseEach();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseEach();</span>
       case 'code':
-<span class="cstat-no" title="statement not covered" >        return this.parseCode();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseCode();</span>
       case 'blockCode':
-<span class="cstat-no" title="statement not covered" >        return this.parseBlockCode();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseBlockCode();</span>
       case 'call':
-<span class="cstat-no" title="statement not covered" >        return this.parseCall();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseCall();</span>
       case 'interpolation':
-<span class="cstat-no" title="statement not covered" >        return this.parseInterpolation();</span>
+<span class="cstat-no" title="statement not covered">        return this.parseInterpolation();</span>
       case 'yield':
-<span class="cstat-no" title="statement not covered" >        this.advance();</span>
-<span class="cstat-no" title="statement not covered" >        var block = new nodes.Block;</span>
-<span class="cstat-no" title="statement not covered" >        block.yield = true;</span>
-<span class="cstat-no" title="statement not covered" >        return block;</span>
+<span class="cstat-no" title="statement not covered">        this.advance();</span>
+<span class="cstat-no" title="statement not covered">        var block = new nodes.Block;</span>
+<span class="cstat-no" title="statement not covered">        block.yield = true;</span>
+<span class="cstat-no" title="statement not covered">        return block;</span>
       case 'id':
       case 'class':
-<span class="cstat-no" title="statement not covered" >        var tok = this.advance();</span>
-<span class="cstat-no" title="statement not covered" >        this.lexer.defer(this.lexer.tok('tag', 'div'));</span>
-<span class="cstat-no" title="statement not covered" >        this.lexer.defer(tok);</span>
-<span class="cstat-no" title="statement not covered" >        return this.parseExpr();</span>
+<span class="cstat-no" title="statement not covered">        var tok = this.advance();</span>
+<span class="cstat-no" title="statement not covered">        this.lexer.defer(this.lexer.tok('tag', 'div'));</span>
+<span class="cstat-no" title="statement not covered">        this.lexer.defer(tok);</span>
+<span class="cstat-no" title="statement not covered">        return this.parseExpr();</span>
       default:
-<span class="cstat-no" title="statement not covered" >        throw new Error('unexpected token "' + this.peek().type + '"');</span>
+<span class="cstat-no" title="statement not covered">        throw new Error('unexpected token "' + this.peek().type + '"');</span>
     }
   },
 &nbsp;
@@ -2169,15 +2167,15 @@ Parser.prototype = {
    * Text
    */
 &nbsp;
-  parseText: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var tok = this.expect('text');</span>
-<span class="cstat-no" title="statement not covered" >    var tokens = this.parseInlineTagsInText(tok.val);</span>
-<span class="cstat-no" title="statement not covered" >    if (tokens.length === 1) <span class="cstat-no" title="statement not covered" >return tokens[0];</span></span>
-<span class="cstat-no" title="statement not covered" >    var node = new nodes.Block;</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; tokens.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >      node.push(tokens[i]);</span>
+  parseText: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var tok = this.expect('text');</span>
+<span class="cstat-no" title="statement not covered">    var tokens = this.parseInlineTagsInText(tok.val);</span>
+<span class="cstat-no" title="statement not covered">    if (tokens.length === 1) <span class="cstat-no" title="statement not covered">return tokens[0];</span></span>
+<span class="cstat-no" title="statement not covered">    var node = new nodes.Block;</span>
+<span class="cstat-no" title="statement not covered">    for (var i = 0; i &lt; tokens.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">      node.push(tokens[i]);</span>
     };
-<span class="cstat-no" title="statement not covered" >    return node;</span>
+<span class="cstat-no" title="statement not covered">    return node;</span>
   },
 &nbsp;
   /**
@@ -2185,12 +2183,12 @@ Parser.prototype = {
    * | block
    */
 &nbsp;
-  parseBlockExpansion: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    if (':' == this.peek().type) {</span>
-<span class="cstat-no" title="statement not covered" >      this.advance();</span>
-<span class="cstat-no" title="statement not covered" >      return new nodes.Block(this.parseExpr());</span>
+  parseBlockExpansion: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    if (':' == this.peek().type) {</span>
+<span class="cstat-no" title="statement not covered">      this.advance();</span>
+<span class="cstat-no" title="statement not covered">      return new nodes.Block(this.parseExpr());</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      return this.block();</span>
+<span class="cstat-no" title="statement not covered">      return this.block();</span>
     }
   },
 &nbsp;
@@ -2198,182 +2196,182 @@ Parser.prototype = {
    * case
    */
 &nbsp;
-  parseCase: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var val = this.expect('case').val;</span>
-<span class="cstat-no" title="statement not covered" >    var node = new nodes.Case(val);</span>
-<span class="cstat-no" title="statement not covered" >    node.line = this.line();</span>
+  parseCase: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var val = this.expect('case').val;</span>
+<span class="cstat-no" title="statement not covered">    var node = new nodes.Case(val);</span>
+<span class="cstat-no" title="statement not covered">    node.line = this.line();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var block = new nodes.Block;</span>
-<span class="cstat-no" title="statement not covered" >    block.line = this.line();</span>
-<span class="cstat-no" title="statement not covered" >    block.filename = this.filename;</span>
-<span class="cstat-no" title="statement not covered" >    this.expect('indent');</span>
-<span class="cstat-no" title="statement not covered" >    while ('outdent' != this.peek().type) {</span>
-<span class="cstat-no" title="statement not covered" >      switch (this.peek().type) {</span>
+<span class="cstat-no" title="statement not covered">    var block = new nodes.Block;</span>
+<span class="cstat-no" title="statement not covered">    block.line = this.line();</span>
+<span class="cstat-no" title="statement not covered">    block.filename = this.filename;</span>
+<span class="cstat-no" title="statement not covered">    this.expect('indent');</span>
+<span class="cstat-no" title="statement not covered">    while ('outdent' != this.peek().type) {</span>
+<span class="cstat-no" title="statement not covered">      switch (this.peek().type) {</span>
         case 'comment':
         case 'newline':
-<span class="cstat-no" title="statement not covered" >          this.advance();</span>
-<span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered">          this.advance();</span>
+<span class="cstat-no" title="statement not covered">          break;</span>
         case 'when':
-<span class="cstat-no" title="statement not covered" >          block.push(this.parseWhen());</span>
-<span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered">          block.push(this.parseWhen());</span>
+<span class="cstat-no" title="statement not covered">          break;</span>
         case 'default':
-<span class="cstat-no" title="statement not covered" >          block.push(this.parseDefault());</span>
-<span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered">          block.push(this.parseDefault());</span>
+<span class="cstat-no" title="statement not covered">          break;</span>
         default:
-<span class="cstat-no" title="statement not covered" >          throw new Error('Unexpected token "' + this.peek().type</span>
+<span class="cstat-no" title="statement not covered">          throw new Error('Unexpected token "' + this.peek().type</span>
                           + '", expected "when", "default" or "newline"');
       }
     }
-<span class="cstat-no" title="statement not covered" >    this.expect('outdent');</span>
+<span class="cstat-no" title="statement not covered">    this.expect('outdent');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    node.block = block;</span>
+<span class="cstat-no" title="statement not covered">    node.block = block;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return node;</span>
+<span class="cstat-no" title="statement not covered">    return node;</span>
   },
 &nbsp;
   /**
    * when
    */
 &nbsp;
-  parseWhen: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var val = this.expect('when').val;</span>
-<span class="cstat-no" title="statement not covered" >    if (this.peek().type !== 'newline')</span>
-<span class="cstat-no" title="statement not covered" >      return new nodes.Case.When(val, this.parseBlockExpansion());</span>
+  parseWhen: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var val = this.expect('when').val;</span>
+<span class="cstat-no" title="statement not covered">    if (this.peek().type !== 'newline')</span>
+<span class="cstat-no" title="statement not covered">      return new nodes.Case.When(val, this.parseBlockExpansion());</span>
     else
-<span class="cstat-no" title="statement not covered" >      return new nodes.Case.When(val);</span>
+<span class="cstat-no" title="statement not covered">      return new nodes.Case.When(val);</span>
   },
 &nbsp;
   /**
    * default
    */
 &nbsp;
-  parseDefault: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    this.expect('default');</span>
-<span class="cstat-no" title="statement not covered" >    return new nodes.Case.When('default', this.parseBlockExpansion());</span>
+  parseDefault: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    this.expect('default');</span>
+<span class="cstat-no" title="statement not covered">    return new nodes.Case.When('default', this.parseBlockExpansion());</span>
   },
 &nbsp;
   /**
    * code
    */
 &nbsp;
-  parseCode: <span class="fstat-no" title="function not covered" >function(afterIf){</span>
-<span class="cstat-no" title="statement not covered" >    var tok = this.expect('code');</span>
-<span class="cstat-no" title="statement not covered" >    var node = new nodes.Code(tok.val, tok.buffer, tok.escape);</span>
-<span class="cstat-no" title="statement not covered" >    var block;</span>
-<span class="cstat-no" title="statement not covered" >    node.line = this.line();</span>
+  parseCode: <span class="fstat-no" title="function not covered">function(afterIf){</span>
+<span class="cstat-no" title="statement not covered">    var tok = this.expect('code');</span>
+<span class="cstat-no" title="statement not covered">    var node = new nodes.Code(tok.val, tok.buffer, tok.escape);</span>
+<span class="cstat-no" title="statement not covered">    var block;</span>
+<span class="cstat-no" title="statement not covered">    node.line = this.line();</span>
 &nbsp;
     // throw an error if an else does not have an if
-<span class="cstat-no" title="statement not covered" >    if (tok.isElse &amp;&amp; !tok.hasIf) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error('Unexpected else without if');</span>
+<span class="cstat-no" title="statement not covered">    if (tok.isElse &amp;&amp; !tok.hasIf) {</span>
+<span class="cstat-no" title="statement not covered">      throw new Error('Unexpected else without if');</span>
     }
 &nbsp;
     // handle block
-<span class="cstat-no" title="statement not covered" >    block = 'indent' == this.peek().type;</span>
-<span class="cstat-no" title="statement not covered" >    if (block) {</span>
-<span class="cstat-no" title="statement not covered" >      node.block = this.block();</span>
+<span class="cstat-no" title="statement not covered">    block = 'indent' == this.peek().type;</span>
+<span class="cstat-no" title="statement not covered">    if (block) {</span>
+<span class="cstat-no" title="statement not covered">      node.block = this.block();</span>
     }
 &nbsp;
     // handle missing block
-<span class="cstat-no" title="statement not covered" >    if (tok.requiresBlock &amp;&amp; !block) {</span>
-<span class="cstat-no" title="statement not covered" >      node.block = new nodes.Block();</span>
+<span class="cstat-no" title="statement not covered">    if (tok.requiresBlock &amp;&amp; !block) {</span>
+<span class="cstat-no" title="statement not covered">      node.block = new nodes.Block();</span>
     }
 &nbsp;
     // mark presense of if for future elses
-<span class="cstat-no" title="statement not covered" >    if (tok.isIf &amp;&amp; this.peek().isElse) {</span>
-<span class="cstat-no" title="statement not covered" >      this.peek().hasIf = true;</span>
-    } else <span class="cstat-no" title="statement not covered" >if (tok.isIf &amp;&amp; this.peek().type === 'newline' &amp;&amp; this.lookahead(2).isElse) {</span>
-<span class="cstat-no" title="statement not covered" >      this.lookahead(2).hasIf = true;</span>
+<span class="cstat-no" title="statement not covered">    if (tok.isIf &amp;&amp; this.peek().isElse) {</span>
+<span class="cstat-no" title="statement not covered">      this.peek().hasIf = true;</span>
+    } else <span class="cstat-no" title="statement not covered">if (tok.isIf &amp;&amp; this.peek().type === 'newline' &amp;&amp; this.lookahead(2).isElse) {</span>
+<span class="cstat-no" title="statement not covered">      this.lookahead(2).hasIf = true;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return node;</span>
+<span class="cstat-no" title="statement not covered">    return node;</span>
   },
 &nbsp;
   /**
    * block code
    */
 &nbsp;
-  parseBlockCode: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var tok = this.expect('blockCode');</span>
-<span class="cstat-no" title="statement not covered" >    var node;</span>
-<span class="cstat-no" title="statement not covered" >    var body = this.peek();</span>
-<span class="cstat-no" title="statement not covered" >    var text;</span>
-<span class="cstat-no" title="statement not covered" >    if (body.type === 'pipeless-text') {</span>
-<span class="cstat-no" title="statement not covered" >      this.advance();</span>
-<span class="cstat-no" title="statement not covered" >      text = body.val.join('\n');</span>
+  parseBlockCode: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var tok = this.expect('blockCode');</span>
+<span class="cstat-no" title="statement not covered">    var node;</span>
+<span class="cstat-no" title="statement not covered">    var body = this.peek();</span>
+<span class="cstat-no" title="statement not covered">    var text;</span>
+<span class="cstat-no" title="statement not covered">    if (body.type === 'pipeless-text') {</span>
+<span class="cstat-no" title="statement not covered">      this.advance();</span>
+<span class="cstat-no" title="statement not covered">      text = body.val.join('\n');</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      text = '';</span>
+<span class="cstat-no" title="statement not covered">      text = '';</span>
     }
-<span class="cstat-no" title="statement not covered" >      node = new nodes.Code(text, false, false);</span>
-<span class="cstat-no" title="statement not covered" >      return node;</span>
+<span class="cstat-no" title="statement not covered">      node = new nodes.Code(text, false, false);</span>
+<span class="cstat-no" title="statement not covered">      return node;</span>
   },
 &nbsp;
   /**
    * comment
    */
 &nbsp;
-  parseComment: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var tok = this.expect('comment');</span>
-<span class="cstat-no" title="statement not covered" >    var node;</span>
+  parseComment: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var tok = this.expect('comment');</span>
+<span class="cstat-no" title="statement not covered">    var node;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var block;</span>
-<span class="cstat-no" title="statement not covered" >    if (block = this.parseTextBlock()) {</span>
-<span class="cstat-no" title="statement not covered" >      node = new nodes.BlockComment(tok.val, block, tok.buffer);</span>
+<span class="cstat-no" title="statement not covered">    var block;</span>
+<span class="cstat-no" title="statement not covered">    if (block = this.parseTextBlock()) {</span>
+<span class="cstat-no" title="statement not covered">      node = new nodes.BlockComment(tok.val, block, tok.buffer);</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      node = new nodes.Comment(tok.val, tok.buffer);</span>
+<span class="cstat-no" title="statement not covered">      node = new nodes.Comment(tok.val, tok.buffer);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    node.line = this.line();</span>
-<span class="cstat-no" title="statement not covered" >    return node;</span>
+<span class="cstat-no" title="statement not covered">    node.line = this.line();</span>
+<span class="cstat-no" title="statement not covered">    return node;</span>
   },
 &nbsp;
   /**
    * doctype
    */
 &nbsp;
-  parseDoctype: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var tok = this.expect('doctype');</span>
-<span class="cstat-no" title="statement not covered" >    var node = new nodes.Doctype(tok.val);</span>
-<span class="cstat-no" title="statement not covered" >    node.line = this.line();</span>
-<span class="cstat-no" title="statement not covered" >    return node;</span>
+  parseDoctype: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var tok = this.expect('doctype');</span>
+<span class="cstat-no" title="statement not covered">    var node = new nodes.Doctype(tok.val);</span>
+<span class="cstat-no" title="statement not covered">    node.line = this.line();</span>
+<span class="cstat-no" title="statement not covered">    return node;</span>
   },
 &nbsp;
   /**
    * filter attrs? text-block
    */
 &nbsp;
-  parseFilter: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var tok = this.expect('filter');</span>
-<span class="cstat-no" title="statement not covered" >    var attrs = this.accept('attrs');</span>
-<span class="cstat-no" title="statement not covered" >    var block;</span>
+  parseFilter: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var tok = this.expect('filter');</span>
+<span class="cstat-no" title="statement not covered">    var attrs = this.accept('attrs');</span>
+<span class="cstat-no" title="statement not covered">    var block;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    block = this.parseTextBlock() || new nodes.Block();</span>
+<span class="cstat-no" title="statement not covered">    block = this.parseTextBlock() || new nodes.Block();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var options = {};</span>
-<span class="cstat-no" title="statement not covered" >    if (attrs) {</span>
-<span class="cstat-no" title="statement not covered" >      attrs.attrs.forEach(<span class="fstat-no" title="function not covered" >function (attribute) {</span></span>
-<span class="cstat-no" title="statement not covered" >        options[attribute.name] = constantinople.toConstant(attribute.val);</span>
+<span class="cstat-no" title="statement not covered">    var options = {};</span>
+<span class="cstat-no" title="statement not covered">    if (attrs) {</span>
+<span class="cstat-no" title="statement not covered">      attrs.attrs.forEach(<span class="fstat-no" title="function not covered">function (attribute) {</span></span>
+<span class="cstat-no" title="statement not covered">        options[attribute.name] = constantinople.toConstant(attribute.val);</span>
       });
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var node = new nodes.Filter(tok.val, block, options);</span>
-<span class="cstat-no" title="statement not covered" >    node.line = this.line();</span>
-<span class="cstat-no" title="statement not covered" >    return node;</span>
+<span class="cstat-no" title="statement not covered">    var node = new nodes.Filter(tok.val, block, options);</span>
+<span class="cstat-no" title="statement not covered">    node.line = this.line();</span>
+<span class="cstat-no" title="statement not covered">    return node;</span>
   },
 &nbsp;
   /**
    * each block
    */
 &nbsp;
-  parseEach: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var tok = this.expect('each');</span>
-<span class="cstat-no" title="statement not covered" >    var node = new nodes.Each(tok.code, tok.val, tok.key);</span>
-<span class="cstat-no" title="statement not covered" >    node.line = this.line();</span>
-<span class="cstat-no" title="statement not covered" >    node.block = this.block();</span>
-<span class="cstat-no" title="statement not covered" >    if (this.peek().type == 'code' &amp;&amp; this.peek().val == 'else') {</span>
-<span class="cstat-no" title="statement not covered" >      this.advance();</span>
-<span class="cstat-no" title="statement not covered" >      node.alternative = this.block();</span>
+  parseEach: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var tok = this.expect('each');</span>
+<span class="cstat-no" title="statement not covered">    var node = new nodes.Each(tok.code, tok.val, tok.key);</span>
+<span class="cstat-no" title="statement not covered">    node.line = this.line();</span>
+<span class="cstat-no" title="statement not covered">    node.block = this.block();</span>
+<span class="cstat-no" title="statement not covered">    if (this.peek().type == 'code' &amp;&amp; this.peek().val == 'else') {</span>
+<span class="cstat-no" title="statement not covered">      this.advance();</span>
+<span class="cstat-no" title="statement not covered">      node.alternative = this.block();</span>
     }
-<span class="cstat-no" title="statement not covered" >    return node;</span>
+<span class="cstat-no" title="statement not covered">    return node;</span>
   },
 &nbsp;
   /**
@@ -2386,224 +2384,224 @@ Parser.prototype = {
    * @api private
    */
 &nbsp;
-  resolvePath: <span class="fstat-no" title="function not covered" >function (path, purpose) {</span>
-<span class="cstat-no" title="statement not covered" >    var p = require('path');</span>
-<span class="cstat-no" title="statement not covered" >    var dirname = p.dirname;</span>
-<span class="cstat-no" title="statement not covered" >    var basename = p.basename;</span>
-<span class="cstat-no" title="statement not covered" >    var join = p.join;</span>
+  resolvePath: <span class="fstat-no" title="function not covered">function (path, purpose) {</span>
+<span class="cstat-no" title="statement not covered">    var p = require('path');</span>
+<span class="cstat-no" title="statement not covered">    var dirname = p.dirname;</span>
+<span class="cstat-no" title="statement not covered">    var basename = p.basename;</span>
+<span class="cstat-no" title="statement not covered">    var join = p.join;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (path[0] !== '/' &amp;&amp; !this.filename)</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error('the "filename" option is required to use "' + purpose + '" with "relative" paths');</span>
+<span class="cstat-no" title="statement not covered">    if (path[0] !== '/' &amp;&amp; !this.filename)</span>
+<span class="cstat-no" title="statement not covered">      throw new Error('the "filename" option is required to use "' + purpose + '" with "relative" paths');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (path[0] === '/' &amp;&amp; !this.options.basedir)</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error('the "basedir" option is required to use "' + purpose + '" with "absolute" paths');</span>
+<span class="cstat-no" title="statement not covered">    if (path[0] === '/' &amp;&amp; !this.options.basedir)</span>
+<span class="cstat-no" title="statement not covered">      throw new Error('the "basedir" option is required to use "' + purpose + '" with "absolute" paths');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    path = join(path[0] === '/' ? this.options.basedir : dirname(this.filename), path);</span>
+<span class="cstat-no" title="statement not covered">    path = join(path[0] === '/' ? this.options.basedir : dirname(this.filename), path);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (basename(path).indexOf('.') === -1) <span class="cstat-no" title="statement not covered" >path += '.jade';</span></span>
+<span class="cstat-no" title="statement not covered">    if (basename(path).indexOf('.') === -1) <span class="cstat-no" title="statement not covered">path += '.jade';</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return path;</span>
+<span class="cstat-no" title="statement not covered">    return path;</span>
   },
 &nbsp;
   /**
    * 'extends' name
    */
 &nbsp;
-  parseExtends: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var fs = require('fs');</span>
+  parseExtends: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var fs = require('fs');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var path = this.resolvePath(this.expect('extends').val.trim(), 'extends');</span>
-<span class="cstat-no" title="statement not covered" >    if ('.jade' != path.substr(-5)) <span class="cstat-no" title="statement not covered" >path += '.jade';</span></span>
+<span class="cstat-no" title="statement not covered">    var path = this.resolvePath(this.expect('extends').val.trim(), 'extends');</span>
+<span class="cstat-no" title="statement not covered">    if ('.jade' != path.substr(-5)) <span class="cstat-no" title="statement not covered">path += '.jade';</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    this.dependencies.push(path);</span>
-<span class="cstat-no" title="statement not covered" >    var str = fs.readFileSync(path, 'utf8');</span>
-<span class="cstat-no" title="statement not covered" >    var parser = new this.constructor(str, path, this.options);</span>
-<span class="cstat-no" title="statement not covered" >    parser.dependencies = this.dependencies;</span>
+<span class="cstat-no" title="statement not covered">    this.dependencies.push(path);</span>
+<span class="cstat-no" title="statement not covered">    var str = fs.readFileSync(path, 'utf8');</span>
+<span class="cstat-no" title="statement not covered">    var parser = new this.constructor(str, path, this.options);</span>
+<span class="cstat-no" title="statement not covered">    parser.dependencies = this.dependencies;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    parser.blocks = this.blocks;</span>
-<span class="cstat-no" title="statement not covered" >    parser.included = this.included;</span>
-<span class="cstat-no" title="statement not covered" >    parser.contexts = this.contexts;</span>
-<span class="cstat-no" title="statement not covered" >    this.extending = parser;</span>
+<span class="cstat-no" title="statement not covered">    parser.blocks = this.blocks;</span>
+<span class="cstat-no" title="statement not covered">    parser.included = this.included;</span>
+<span class="cstat-no" title="statement not covered">    parser.contexts = this.contexts;</span>
+<span class="cstat-no" title="statement not covered">    this.extending = parser;</span>
 &nbsp;
     // TODO: null node
-<span class="cstat-no" title="statement not covered" >    return new nodes.Literal('');</span>
+<span class="cstat-no" title="statement not covered">    return new nodes.Literal('');</span>
   },
 &nbsp;
   /**
    * 'block' name block
    */
 &nbsp;
-  parseBlock: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var block = this.expect('block');</span>
-<span class="cstat-no" title="statement not covered" >    var mode = block.mode;</span>
-<span class="cstat-no" title="statement not covered" >    var name = block.val.trim();</span>
+  parseBlock: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var block = this.expect('block');</span>
+<span class="cstat-no" title="statement not covered">    var mode = block.mode;</span>
+<span class="cstat-no" title="statement not covered">    var name = block.val.trim();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var line = block.line;</span>
+<span class="cstat-no" title="statement not covered">    var line = block.line;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    this.inBlock++;</span>
-<span class="cstat-no" title="statement not covered" >    block = 'indent' == this.peek().type</span>
+<span class="cstat-no" title="statement not covered">    this.inBlock++;</span>
+<span class="cstat-no" title="statement not covered">    block = 'indent' == this.peek().type</span>
       ? this.block()
       : new nodes.Block(new nodes.Literal(''));
-<span class="cstat-no" title="statement not covered" >    this.inBlock--;</span>
-<span class="cstat-no" title="statement not covered" >    block.name = name;</span>
-<span class="cstat-no" title="statement not covered" >    block.line = line;</span>
+<span class="cstat-no" title="statement not covered">    this.inBlock--;</span>
+<span class="cstat-no" title="statement not covered">    block.name = name;</span>
+<span class="cstat-no" title="statement not covered">    block.line = line;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var prev = this.blocks[name] || {prepended: [], appended: []}</span>
-<span class="cstat-no" title="statement not covered" >    if (prev.mode === 'replace') <span class="cstat-no" title="statement not covered" >return this.blocks[name] = prev;</span></span>
+<span class="cstat-no" title="statement not covered">    var prev = this.blocks[name] || {prepended: [], appended: []}</span>
+<span class="cstat-no" title="statement not covered">    if (prev.mode === 'replace') <span class="cstat-no" title="statement not covered">return this.blocks[name] = prev;</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var allNodes = prev.prepended.concat(block.nodes).concat(prev.appended);</span>
+<span class="cstat-no" title="statement not covered">    var allNodes = prev.prepended.concat(block.nodes).concat(prev.appended);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    switch (mode) {</span>
+<span class="cstat-no" title="statement not covered">    switch (mode) {</span>
       case 'append':
-<span class="cstat-no" title="statement not covered" >        prev.appended = prev.parser === this ?</span>
+<span class="cstat-no" title="statement not covered">        prev.appended = prev.parser === this ?</span>
                         prev.appended.concat(block.nodes) :
                         block.nodes.concat(prev.appended);
-<span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="cstat-no" title="statement not covered">        break;</span>
       case 'prepend':
-<span class="cstat-no" title="statement not covered" >        prev.prepended = prev.parser === this ?</span>
+<span class="cstat-no" title="statement not covered">        prev.prepended = prev.parser === this ?</span>
                          block.nodes.concat(prev.prepended) :
                          prev.prepended.concat(block.nodes);
-<span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="cstat-no" title="statement not covered">        break;</span>
     }
-<span class="cstat-no" title="statement not covered" >    block.nodes = allNodes;</span>
-<span class="cstat-no" title="statement not covered" >    block.appended = prev.appended;</span>
-<span class="cstat-no" title="statement not covered" >    block.prepended = prev.prepended;</span>
-<span class="cstat-no" title="statement not covered" >    block.mode = mode;</span>
-<span class="cstat-no" title="statement not covered" >    block.parser = this;</span>
+<span class="cstat-no" title="statement not covered">    block.nodes = allNodes;</span>
+<span class="cstat-no" title="statement not covered">    block.appended = prev.appended;</span>
+<span class="cstat-no" title="statement not covered">    block.prepended = prev.prepended;</span>
+<span class="cstat-no" title="statement not covered">    block.mode = mode;</span>
+<span class="cstat-no" title="statement not covered">    block.parser = this;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    block.isSubBlock = this.inBlock &gt; 0;</span>
+<span class="cstat-no" title="statement not covered">    block.isSubBlock = this.inBlock &gt; 0;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return this.blocks[name] = block;</span>
+<span class="cstat-no" title="statement not covered">    return this.blocks[name] = block;</span>
   },
 &nbsp;
-  parseMixinBlock: <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    var block = this.expect('mixin-block');</span>
-<span class="cstat-no" title="statement not covered" >    if (!this.inMixin) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error('Anonymous blocks are not allowed unless they are part of a mixin.');</span>
+  parseMixinBlock: <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    var block = this.expect('mixin-block');</span>
+<span class="cstat-no" title="statement not covered">    if (!this.inMixin) {</span>
+<span class="cstat-no" title="statement not covered">      throw new Error('Anonymous blocks are not allowed unless they are part of a mixin.');</span>
     }
-<span class="cstat-no" title="statement not covered" >    return new nodes.MixinBlock();</span>
+<span class="cstat-no" title="statement not covered">    return new nodes.MixinBlock();</span>
   },
 &nbsp;
   /**
    * include block?
    */
 &nbsp;
-  parseInclude: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var fs = require('fs');</span>
-<span class="cstat-no" title="statement not covered" >    var tok = this.expect('include');</span>
+  parseInclude: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var fs = require('fs');</span>
+<span class="cstat-no" title="statement not covered">    var tok = this.expect('include');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var path = this.resolvePath(tok.val.trim(), 'include');</span>
-<span class="cstat-no" title="statement not covered" >    this.dependencies.push(path);</span>
+<span class="cstat-no" title="statement not covered">    var path = this.resolvePath(tok.val.trim(), 'include');</span>
+<span class="cstat-no" title="statement not covered">    this.dependencies.push(path);</span>
     // has-filter
-<span class="cstat-no" title="statement not covered" >    if (tok.filter) {</span>
-<span class="cstat-no" title="statement not covered" >      var str = fs.readFileSync(path, 'utf8').replace(/\r/g, '');</span>
-<span class="cstat-no" title="statement not covered" >      var options = {filename: path};</span>
-<span class="cstat-no" title="statement not covered" >      if (tok.attrs) {</span>
-<span class="cstat-no" title="statement not covered" >        tok.attrs.attrs.forEach(<span class="fstat-no" title="function not covered" >function (attribute) {</span></span>
-<span class="cstat-no" title="statement not covered" >          options[attribute.name] = constantinople.toConstant(attribute.val);</span>
+<span class="cstat-no" title="statement not covered">    if (tok.filter) {</span>
+<span class="cstat-no" title="statement not covered">      var str = fs.readFileSync(path, 'utf8').replace(/\r/g, '');</span>
+<span class="cstat-no" title="statement not covered">      var options = {filename: path};</span>
+<span class="cstat-no" title="statement not covered">      if (tok.attrs) {</span>
+<span class="cstat-no" title="statement not covered">        tok.attrs.attrs.forEach(<span class="fstat-no" title="function not covered">function (attribute) {</span></span>
+<span class="cstat-no" title="statement not covered">          options[attribute.name] = constantinople.toConstant(attribute.val);</span>
         });
       }
-<span class="cstat-no" title="statement not covered" >      str = filters(tok.filter, str, options);</span>
-<span class="cstat-no" title="statement not covered" >      return new nodes.Literal(str);</span>
+<span class="cstat-no" title="statement not covered">      str = filters(tok.filter, str, options);</span>
+<span class="cstat-no" title="statement not covered">      return new nodes.Literal(str);</span>
     }
 &nbsp;
     // non-jade
-<span class="cstat-no" title="statement not covered" >    if ('.jade' != path.substr(-5)) {</span>
-<span class="cstat-no" title="statement not covered" >      var str = fs.readFileSync(path, 'utf8').replace(/\r/g, '');</span>
-<span class="cstat-no" title="statement not covered" >      return new nodes.Literal(str);</span>
+<span class="cstat-no" title="statement not covered">    if ('.jade' != path.substr(-5)) {</span>
+<span class="cstat-no" title="statement not covered">      var str = fs.readFileSync(path, 'utf8').replace(/\r/g, '');</span>
+<span class="cstat-no" title="statement not covered">      return new nodes.Literal(str);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var str = fs.readFileSync(path, 'utf8');</span>
-<span class="cstat-no" title="statement not covered" >    var parser = new this.constructor(str, path, this.options);</span>
-<span class="cstat-no" title="statement not covered" >    parser.dependencies = this.dependencies;</span>
+<span class="cstat-no" title="statement not covered">    var str = fs.readFileSync(path, 'utf8');</span>
+<span class="cstat-no" title="statement not covered">    var parser = new this.constructor(str, path, this.options);</span>
+<span class="cstat-no" title="statement not covered">    parser.dependencies = this.dependencies;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    parser.blocks = utils.merge({}, this.blocks);</span>
-<span class="cstat-no" title="statement not covered" >    parser.included = true;</span>
+<span class="cstat-no" title="statement not covered">    parser.blocks = utils.merge({}, this.blocks);</span>
+<span class="cstat-no" title="statement not covered">    parser.included = true;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    parser.mixins = this.mixins;</span>
+<span class="cstat-no" title="statement not covered">    parser.mixins = this.mixins;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    this.context(parser);</span>
-<span class="cstat-no" title="statement not covered" >    var ast = parser.parse();</span>
-<span class="cstat-no" title="statement not covered" >    this.context();</span>
-<span class="cstat-no" title="statement not covered" >    ast.filename = path;</span>
+<span class="cstat-no" title="statement not covered">    this.context(parser);</span>
+<span class="cstat-no" title="statement not covered">    var ast = parser.parse();</span>
+<span class="cstat-no" title="statement not covered">    this.context();</span>
+<span class="cstat-no" title="statement not covered">    ast.filename = path;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if ('indent' == this.peek().type) {</span>
-<span class="cstat-no" title="statement not covered" >      ast.includeBlock().push(this.block());</span>
+<span class="cstat-no" title="statement not covered">    if ('indent' == this.peek().type) {</span>
+<span class="cstat-no" title="statement not covered">      ast.includeBlock().push(this.block());</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return ast;</span>
+<span class="cstat-no" title="statement not covered">    return ast;</span>
   },
 &nbsp;
   /**
    * call ident block
    */
 &nbsp;
-  parseCall: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var tok = this.expect('call');</span>
-<span class="cstat-no" title="statement not covered" >    var name = tok.val;</span>
-<span class="cstat-no" title="statement not covered" >    var args = tok.args;</span>
-<span class="cstat-no" title="statement not covered" >    var mixin = new nodes.Mixin(name, args, new nodes.Block, true);</span>
+  parseCall: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var tok = this.expect('call');</span>
+<span class="cstat-no" title="statement not covered">    var name = tok.val;</span>
+<span class="cstat-no" title="statement not covered">    var args = tok.args;</span>
+<span class="cstat-no" title="statement not covered">    var mixin = new nodes.Mixin(name, args, new nodes.Block, true);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    this.tag(mixin);</span>
-<span class="cstat-no" title="statement not covered" >    if (mixin.code) {</span>
-<span class="cstat-no" title="statement not covered" >      mixin.block.push(mixin.code);</span>
-<span class="cstat-no" title="statement not covered" >      mixin.code = null;</span>
+<span class="cstat-no" title="statement not covered">    this.tag(mixin);</span>
+<span class="cstat-no" title="statement not covered">    if (mixin.code) {</span>
+<span class="cstat-no" title="statement not covered">      mixin.block.push(mixin.code);</span>
+<span class="cstat-no" title="statement not covered">      mixin.code = null;</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (mixin.block.isEmpty()) <span class="cstat-no" title="statement not covered" >mixin.block = null;</span></span>
-<span class="cstat-no" title="statement not covered" >    return mixin;</span>
+<span class="cstat-no" title="statement not covered">    if (mixin.block.isEmpty()) <span class="cstat-no" title="statement not covered">mixin.block = null;</span></span>
+<span class="cstat-no" title="statement not covered">    return mixin;</span>
   },
 &nbsp;
   /**
    * mixin block
    */
 &nbsp;
-  parseMixin: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var tok = this.expect('mixin');</span>
-<span class="cstat-no" title="statement not covered" >    var name = tok.val;</span>
-<span class="cstat-no" title="statement not covered" >    var args = tok.args;</span>
-<span class="cstat-no" title="statement not covered" >    var mixin;</span>
+  parseMixin: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var tok = this.expect('mixin');</span>
+<span class="cstat-no" title="statement not covered">    var name = tok.val;</span>
+<span class="cstat-no" title="statement not covered">    var args = tok.args;</span>
+<span class="cstat-no" title="statement not covered">    var mixin;</span>
 &nbsp;
     // definition
-<span class="cstat-no" title="statement not covered" >    if ('indent' == this.peek().type) {</span>
-<span class="cstat-no" title="statement not covered" >      this.inMixin++;</span>
-<span class="cstat-no" title="statement not covered" >      mixin = new nodes.Mixin(name, args, this.block(), false);</span>
-<span class="cstat-no" title="statement not covered" >      this.mixins[name] = mixin;</span>
-<span class="cstat-no" title="statement not covered" >      this.inMixin--;</span>
-<span class="cstat-no" title="statement not covered" >      return mixin;</span>
+<span class="cstat-no" title="statement not covered">    if ('indent' == this.peek().type) {</span>
+<span class="cstat-no" title="statement not covered">      this.inMixin++;</span>
+<span class="cstat-no" title="statement not covered">      mixin = new nodes.Mixin(name, args, this.block(), false);</span>
+<span class="cstat-no" title="statement not covered">      this.mixins[name] = mixin;</span>
+<span class="cstat-no" title="statement not covered">      this.inMixin--;</span>
+<span class="cstat-no" title="statement not covered">      return mixin;</span>
     // call
     } else {
-<span class="cstat-no" title="statement not covered" >      return new nodes.Mixin(name, args, null, true);</span>
+<span class="cstat-no" title="statement not covered">      return new nodes.Mixin(name, args, null, true);</span>
     }
   },
 &nbsp;
-  parseInlineTagsInText: <span class="fstat-no" title="function not covered" >function (str) {</span>
-<span class="cstat-no" title="statement not covered" >    var line = this.line();</span>
+  parseInlineTagsInText: <span class="fstat-no" title="function not covered">function (str) {</span>
+<span class="cstat-no" title="statement not covered">    var line = this.line();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var match = /(\\)?#\[((?:.|\n)*)$/.exec(str);</span>
-<span class="cstat-no" title="statement not covered" >    if (match) {</span>
-<span class="cstat-no" title="statement not covered" >      if (match[1]) { // escape</span>
-<span class="cstat-no" title="statement not covered" >        var text = new nodes.Text(str.substr(0, match.index) + '#[');</span>
-<span class="cstat-no" title="statement not covered" >        text.line = line;</span>
-<span class="cstat-no" title="statement not covered" >        var rest = this.parseInlineTagsInText(match[2]);</span>
-<span class="cstat-no" title="statement not covered" >        if (rest[0].type === 'Text') {</span>
-<span class="cstat-no" title="statement not covered" >          text.val += rest[0].val;</span>
-<span class="cstat-no" title="statement not covered" >          rest.shift();</span>
+<span class="cstat-no" title="statement not covered">    var match = /(\\)?#\[((?:.|\n)*)$/.exec(str);</span>
+<span class="cstat-no" title="statement not covered">    if (match) {</span>
+<span class="cstat-no" title="statement not covered">      if (match[1]) { // escape</span>
+<span class="cstat-no" title="statement not covered">        var text = new nodes.Text(str.substr(0, match.index) + '#[');</span>
+<span class="cstat-no" title="statement not covered">        text.line = line;</span>
+<span class="cstat-no" title="statement not covered">        var rest = this.parseInlineTagsInText(match[2]);</span>
+<span class="cstat-no" title="statement not covered">        if (rest[0].type === 'Text') {</span>
+<span class="cstat-no" title="statement not covered">          text.val += rest[0].val;</span>
+<span class="cstat-no" title="statement not covered">          rest.shift();</span>
         }
-<span class="cstat-no" title="statement not covered" >        return [text].concat(rest);</span>
+<span class="cstat-no" title="statement not covered">        return [text].concat(rest);</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        var text = new nodes.Text(str.substr(0, match.index));</span>
-<span class="cstat-no" title="statement not covered" >        text.line = line;</span>
-<span class="cstat-no" title="statement not covered" >        var buffer = [text];</span>
-<span class="cstat-no" title="statement not covered" >        var rest = match[2];</span>
-<span class="cstat-no" title="statement not covered" >        var range = parseJSExpression(rest);</span>
-<span class="cstat-no" title="statement not covered" >        var inner = new Parser(range.src, this.filename, this.options);</span>
-<span class="cstat-no" title="statement not covered" >        buffer.push(inner.parse());</span>
-<span class="cstat-no" title="statement not covered" >        return buffer.concat(this.parseInlineTagsInText(rest.substr(range.end + 1)));</span>
+<span class="cstat-no" title="statement not covered">        var text = new nodes.Text(str.substr(0, match.index));</span>
+<span class="cstat-no" title="statement not covered">        text.line = line;</span>
+<span class="cstat-no" title="statement not covered">        var buffer = [text];</span>
+<span class="cstat-no" title="statement not covered">        var rest = match[2];</span>
+<span class="cstat-no" title="statement not covered">        var range = parseJSExpression(rest);</span>
+<span class="cstat-no" title="statement not covered">        var inner = new Parser(range.src, this.filename, this.options);</span>
+<span class="cstat-no" title="statement not covered">        buffer.push(inner.parse());</span>
+<span class="cstat-no" title="statement not covered">        return buffer.concat(this.parseInlineTagsInText(rest.substr(range.end + 1)));</span>
       }
     } else {
-<span class="cstat-no" title="statement not covered" >      var text = new nodes.Text(str);</span>
-<span class="cstat-no" title="statement not covered" >      text.line = line;</span>
-<span class="cstat-no" title="statement not covered" >      return [text];</span>
+<span class="cstat-no" title="statement not covered">      var text = new nodes.Text(str);</span>
+<span class="cstat-no" title="statement not covered">      text.line = line;</span>
+<span class="cstat-no" title="statement not covered">      return [text];</span>
     }
   },
 &nbsp;
@@ -2611,155 +2609,156 @@ Parser.prototype = {
    * indent (text | newline)* outdent
    */
 &nbsp;
-  parseTextBlock: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var block = new nodes.Block;</span>
-<span class="cstat-no" title="statement not covered" >    block.line = this.line();</span>
-<span class="cstat-no" title="statement not covered" >    var body = this.peek();</span>
-<span class="cstat-no" title="statement not covered" >    if (body.type !== 'pipeless-text') <span class="cstat-no" title="statement not covered" >return;</span></span>
-<span class="cstat-no" title="statement not covered" >    this.advance();</span>
-<span class="cstat-no" title="statement not covered" >    block.nodes = body.val.reduce(<span class="fstat-no" title="function not covered" >function (accumulator, text) {</span></span>
-<span class="cstat-no" title="statement not covered" >      return accumulator.concat(this.parseInlineTagsInText(text));</span>
+  parseTextBlock: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var block = new nodes.Block;</span>
+<span class="cstat-no" title="statement not covered">    block.line = this.line();</span>
+<span class="cstat-no" title="statement not covered">    var body = this.peek();</span>
+<span class="cstat-no" title="statement not covered">    if (body.type !== 'pipeless-text') <span class="cstat-no" title="statement not covered">return;</span></span>
+<span class="cstat-no" title="statement not covered">    this.advance();</span>
+<span class="cstat-no" title="statement not covered">    block.nodes = body.val.reduce(<span class="fstat-no" title="function not covered">function (accumulator, text) {</span></span>
+<span class="cstat-no" title="statement not covered">      return accumulator.concat(this.parseInlineTagsInText(text));</span>
     }.bind(this), []);
-<span class="cstat-no" title="statement not covered" >    return block;</span>
+<span class="cstat-no" title="statement not covered">    return block;</span>
   },
 &nbsp;
   /**
    * indent expr* outdent
    */
 &nbsp;
-  block: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var block = new nodes.Block;</span>
-<span class="cstat-no" title="statement not covered" >    block.line = this.line();</span>
-<span class="cstat-no" title="statement not covered" >    block.filename = this.filename;</span>
-<span class="cstat-no" title="statement not covered" >    this.expect('indent');</span>
-<span class="cstat-no" title="statement not covered" >    while ('outdent' != this.peek().type) {</span>
-<span class="cstat-no" title="statement not covered" >      if ('newline' == this.peek().type) {</span>
-<span class="cstat-no" title="statement not covered" >        this.advance();</span>
+  block: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var block = new nodes.Block;</span>
+<span class="cstat-no" title="statement not covered">    block.line = this.line();</span>
+<span class="cstat-no" title="statement not covered">    block.filename = this.filename;</span>
+<span class="cstat-no" title="statement not covered">    this.expect('indent');</span>
+<span class="cstat-no" title="statement not covered">    while ('outdent' != this.peek().type) {</span>
+<span class="cstat-no" title="statement not covered">      if ('newline' == this.peek().type) {</span>
+<span class="cstat-no" title="statement not covered">        this.advance();</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        var expr = this.parseExpr();</span>
-<span class="cstat-no" title="statement not covered" >        expr.filename = this.filename;</span>
-<span class="cstat-no" title="statement not covered" >        block.push(expr);</span>
+<span class="cstat-no" title="statement not covered">        var expr = this.parseExpr();</span>
+<span class="cstat-no" title="statement not covered">        expr.filename = this.filename;</span>
+<span class="cstat-no" title="statement not covered">        block.push(expr);</span>
       }
     }
-<span class="cstat-no" title="statement not covered" >    this.expect('outdent');</span>
-<span class="cstat-no" title="statement not covered" >    return block;</span>
+<span class="cstat-no" title="statement not covered">    this.expect('outdent');</span>
+<span class="cstat-no" title="statement not covered">    return block;</span>
   },
 &nbsp;
   /**
    * interpolation (attrs | class | id)* (text | code | ':')? newline* block?
    */
 &nbsp;
-  parseInterpolation: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var tok = this.advance();</span>
-<span class="cstat-no" title="statement not covered" >    var tag = new nodes.Tag(tok.val);</span>
-<span class="cstat-no" title="statement not covered" >    tag.buffer = true;</span>
-<span class="cstat-no" title="statement not covered" >    return this.tag(tag);</span>
+  parseInterpolation: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var tok = this.advance();</span>
+<span class="cstat-no" title="statement not covered">    var tag = new nodes.Tag(tok.val);</span>
+<span class="cstat-no" title="statement not covered">    tag.buffer = true;</span>
+<span class="cstat-no" title="statement not covered">    return this.tag(tag);</span>
   },
 &nbsp;
   /**
    * tag (attrs | class | id)* (text | code | ':')? newline* block?
    */
 &nbsp;
-  parseTag: <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >    var tok = this.advance();</span>
-<span class="cstat-no" title="statement not covered" >    var tag = new nodes.Tag(tok.val);</span>
+  parseTag: <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">    var tok = this.advance();</span>
+<span class="cstat-no" title="statement not covered">    var tag = new nodes.Tag(tok.val);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    tag.selfClosing = tok.selfClosing;</span>
+<span class="cstat-no" title="statement not covered">    tag.selfClosing = tok.selfClosing;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return this.tag(tag);</span>
+<span class="cstat-no" title="statement not covered">    return this.tag(tag);</span>
   },
 &nbsp;
   /**
    * Parse tag.
    */
 &nbsp;
-  tag: <span class="fstat-no" title="function not covered" >function(tag){</span>
-<span class="cstat-no" title="statement not covered" >    tag.line = this.line();</span>
+  tag: <span class="fstat-no" title="function not covered">function(tag){</span>
+<span class="cstat-no" title="statement not covered">    tag.line = this.line();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var seenAttrs = false;</span>
+<span class="cstat-no" title="statement not covered">    var seenAttrs = false;</span>
     // (attrs | class | id)*
-<span class="cstat-no" title="statement not covered" >    out:</span>
-<span class="cstat-no" title="statement not covered" >      while (true) {</span>
-<span class="cstat-no" title="statement not covered" >        switch (this.peek().type) {</span>
+<span class="cstat-no" title="statement not covered">    out:</span>
+<span class="cstat-no" title="statement not covered">      while (true) {</span>
+<span class="cstat-no" title="statement not covered">        switch (this.peek().type) {</span>
           case 'id':
           case 'class':
-<span class="cstat-no" title="statement not covered" >            var tok = this.advance();</span>
-<span class="cstat-no" title="statement not covered" >            tag.setAttribute(tok.type, "'" + tok.val + "'");</span>
-<span class="cstat-no" title="statement not covered" >            continue;</span>
+<span class="cstat-no" title="statement not covered">            var tok = this.advance();</span>
+<span class="cstat-no" title="statement not covered">            tag.setAttribute(tok.type, "'" + tok.val + "'");</span>
+<span class="cstat-no" title="statement not covered">            continue;</span>
           case 'attrs':
-<span class="cstat-no" title="statement not covered" >            if (seenAttrs) {</span>
-<span class="cstat-no" title="statement not covered" >              console.warn(this.filename + ', line ' + this.peek().line + ':\nYou should not have jade tags with multiple attributes.');</span>
+<span class="cstat-no" title="statement not covered">            if (seenAttrs) {</span>
+<span class="cstat-no" title="statement not covered">              console.warn(this.filename + ', line ' + this.peek().line + ':\nYou should not have jade tags with multiple attributes.');</span>
             }
-<span class="cstat-no" title="statement not covered" >            seenAttrs = true;</span>
-<span class="cstat-no" title="statement not covered" >            var tok = this.advance();</span>
-<span class="cstat-no" title="statement not covered" >            var attrs = tok.attrs;</span>
+<span class="cstat-no" title="statement not covered">            seenAttrs = true;</span>
+<span class="cstat-no" title="statement not covered">            var tok = this.advance();</span>
+<span class="cstat-no" title="statement not covered">            var attrs = tok.attrs;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            if (tok.selfClosing) <span class="cstat-no" title="statement not covered" >tag.selfClosing = true;</span></span>
+<span class="cstat-no" title="statement not covered">            if (tok.selfClosing) <span class="cstat-no" title="statement not covered">tag.selfClosing = true;</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            for (var i = 0; i &lt; attrs.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >              tag.setAttribute(attrs[i].name, attrs[i].val, attrs[i].escaped);</span>
+<span class="cstat-no" title="statement not covered">            for (var i = 0; i &lt; attrs.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">              tag.setAttribute(attrs[i].name, attrs[i].val, attrs[i].escaped);</span>
             }
-<span class="cstat-no" title="statement not covered" >            continue;</span>
+<span class="cstat-no" title="statement not covered">            continue;</span>
           case '&amp;attributes':
-<span class="cstat-no" title="statement not covered" >            var tok = this.advance();</span>
-<span class="cstat-no" title="statement not covered" >            tag.addAttributes(tok.val);</span>
-<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="cstat-no" title="statement not covered">            var tok = this.advance();</span>
+<span class="cstat-no" title="statement not covered">            tag.addAttributes(tok.val);</span>
+<span class="cstat-no" title="statement not covered">            break;</span>
           default:
-<span class="cstat-no" title="statement not covered" >            break out;</span>
+<span class="cstat-no" title="statement not covered">            break out;</span>
         }
       }
 &nbsp;
     // check immediate '.'
-<span class="cstat-no" title="statement not covered" >    if ('dot' == this.peek().type) {</span>
-<span class="cstat-no" title="statement not covered" >      tag.textOnly = true;</span>
-<span class="cstat-no" title="statement not covered" >      this.advance();</span>
+<span class="cstat-no" title="statement not covered">    if ('dot' == this.peek().type) {</span>
+<span class="cstat-no" title="statement not covered">      tag.textOnly = true;</span>
+<span class="cstat-no" title="statement not covered">      this.advance();</span>
     }
 &nbsp;
     // (text | code | ':')?
-<span class="cstat-no" title="statement not covered" >    switch (this.peek().type) {</span>
+<span class="cstat-no" title="statement not covered">    switch (this.peek().type) {</span>
       case 'text':
-<span class="cstat-no" title="statement not covered" >        tag.block.push(this.parseText());</span>
-<span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="cstat-no" title="statement not covered">        tag.block.push(this.parseText());</span>
+<span class="cstat-no" title="statement not covered">        break;</span>
       case 'code':
-<span class="cstat-no" title="statement not covered" >        tag.code = this.parseCode();</span>
-<span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="cstat-no" title="statement not covered">        tag.code = this.parseCode();</span>
+<span class="cstat-no" title="statement not covered">        break;</span>
       case ':':
-<span class="cstat-no" title="statement not covered" >        this.advance();</span>
-<span class="cstat-no" title="statement not covered" >        tag.block = new nodes.Block;</span>
-<span class="cstat-no" title="statement not covered" >        tag.block.push(this.parseExpr());</span>
-<span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="cstat-no" title="statement not covered">        this.advance();</span>
+<span class="cstat-no" title="statement not covered">        tag.block = new nodes.Block;</span>
+<span class="cstat-no" title="statement not covered">        tag.block.push(this.parseExpr());</span>
+<span class="cstat-no" title="statement not covered">        break;</span>
       case 'newline':
       case 'indent':
       case 'outdent':
       case 'eos':
       case 'pipeless-text':
-<span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="cstat-no" title="statement not covered">        break;</span>
       default:
-<span class="cstat-no" title="statement not covered" >        throw new Error('Unexpected token `' + this.peek().type + '` expected `text`, `code`, `:`, `newline` or `eos`')</span>
+<span class="cstat-no" title="statement not covered">        throw new Error('Unexpected token `' + this.peek().type + '` expected `text`, `code`, `:`, `newline` or `eos`')</span>
     }
 &nbsp;
     // newline*
-<span class="cstat-no" title="statement not covered" >    while ('newline' == this.peek().type) <span class="cstat-no" title="statement not covered" >this.advance();</span></span>
+<span class="cstat-no" title="statement not covered">    while ('newline' == this.peek().type) <span class="cstat-no" title="statement not covered">this.advance();</span></span>
 &nbsp;
     // block?
-<span class="cstat-no" title="statement not covered" >    if (tag.textOnly) {</span>
-<span class="cstat-no" title="statement not covered" >      tag.block = this.parseTextBlock() || new nodes.Block();</span>
-    } else <span class="cstat-no" title="statement not covered" >if ('indent' == this.peek().type) {</span>
-<span class="cstat-no" title="statement not covered" >      var block = this.block();</span>
-<span class="cstat-no" title="statement not covered" >      for (var i = 0, len = block.nodes.length; i &lt; len; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >        tag.block.push(block.nodes[i]);</span>
+<span class="cstat-no" title="statement not covered">    if (tag.textOnly) {</span>
+<span class="cstat-no" title="statement not covered">      tag.block = this.parseTextBlock() || new nodes.Block();</span>
+    } else <span class="cstat-no" title="statement not covered">if ('indent' == this.peek().type) {</span>
+<span class="cstat-no" title="statement not covered">      var block = this.block();</span>
+<span class="cstat-no" title="statement not covered">      for (var i = 0, len = block.nodes.length; i &lt; len; ++i) {</span>
+<span class="cstat-no" title="statement not covered">        tag.block.push(block.nodes[i]);</span>
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return tag;</span>
+<span class="cstat-no" title="statement not covered">    return tag;</span>
   }
 };
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
     <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sat Apr 15 2017 21:32:05 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
