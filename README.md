@@ -1,6 +1,6 @@
 # npmtest-jade
 
-#### test coverage for  [jade (v1.11.0)](http://jade-lang.com)  [![npm package](https://img.shields.io/npm/v/npmtest-jade.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-jade) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-jade.svg)](https://travis-ci.org/npmtest/node-npmtest-jade)
+#### basic test coverage for  [jade (v1.11.0)](http://jade-lang.com)  [![npm package](https://img.shields.io/npm/v/npmtest-jade.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-jade) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-jade.svg)](https://travis-ci.org/npmtest/node-npmtest-jade)
 
 #### A clean, whitespace-sensitive template language for writing HTML
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-jade/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-jade/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-jade/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-jade/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-jade/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-jade/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-jade/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-jade/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-jade/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-jade/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-jade/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-jade/build/coverage.html/index.html)
 
